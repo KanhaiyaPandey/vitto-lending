@@ -9,6 +9,8 @@ const REASON_LABELS: Record<string, string> = {
   STRONG_REVENUE_COVERAGE: "Strong revenue-to-EMI coverage",
   ACCEPTABLE_LOAN_RATIO: "Loan-to-revenue ratio within limits",
   GOOD_TENURE: "Tenure is well structured",
+  INVALID_PAN: "PAN format is invalid",
+  STRONG_PROFILE: "Strong overall profile",
 };
 
 interface Props {
@@ -17,7 +19,7 @@ interface Props {
 }
 
 export default function DecisionView({ result, onReset }: Props) {
-  const approved = result.status === "APPROVED";
+  const approved = result.decision === "APPROVED";
 
   return (
     <div className="space-y-6">

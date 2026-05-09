@@ -22,6 +22,7 @@ export interface DecisionResult {
   applicationId: string;
   decision: 'APPROVED' | 'REJECTED';
   creditScore: number;
+  monthlyEmi: number;
   reasonCodes: string[];
   createdAt: string;
 }

@@ -44,6 +44,7 @@ router.post('/', validateApplication, async (req, res) => {
       applicationId: id,
       decision: result.decision,
       creditScore: result.creditScore,
+      monthlyEmi: result.monthlyEmi,
       reasonCodes: result.reasonCodes,
       createdAt: new Date().toISOString(),
     });

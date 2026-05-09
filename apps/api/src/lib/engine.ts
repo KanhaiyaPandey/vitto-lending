@@ -28,6 +28,7 @@ export interface EngineInput {
 export interface EngineOutput {
   decision: 'APPROVED' | 'REJECTED';
   creditScore: number;
+  monthlyEmi: number;
   reasonCodes: string[];
 }
 
@@ -90,6 +91,7 @@ export function runDecisionEngine(input: EngineInput): EngineOutput {
   return {
     decision: score >= 50 ? 'APPROVED' : 'REJECTED',
     creditScore: score,
+    monthlyEmi,
     reasonCodes: reasons,
   };
 }
